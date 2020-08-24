@@ -1,0 +1,140 @@
+/* Typography ---------------------- */
+p, ul, ol {
+  line-height: $base-scale;
+  margin: 0 0 $base-scale 0;
+}
+
+ul, ol {
+  &.plain {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &.square {
+    list-style: square outside;
+    padding-left: 1.25*$base-scale;
+  }
+}
+
+ul ul, ol ol, ul ol, ol ul {
+  margin-bottom: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-header;
+  color: $header-font-color-primary;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 0.67rem 0;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin: 0.83rem 0;
+}
+
+h3 {
+  font-size: 1.17rem;
+  margin: 1rem 0;
+}
+
+h4 {
+  font-size: 1rem;
+  margin: 1.33rem 0;
+}
+
+h5 {
+  font-size: 0.83rem;
+  margin: 1.67rem 0;
+}
+
+h6 {
+  font-size: 0.67rem;
+  margin: 2.33rem 0;
+}
+
+table {
+  width: 100%;
+  margin-bottom: $base-scale;
+  font-size: $font-size-small;
+  box-shadow: 0 0 0 2px $color-border;
+
+  thead, tfoot {
+    tr {
+      background-color: #fff;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border: 2px solid $color-border;
+    }
+  }
+
+  thead {
+    font-size: $font-size-medium;
+  }
+
+  tfoot {
+    font-weight: bold;
+  }
+
+  td {
+    vertical-align: baseline;
+    padding: 8px;
+    border: 2px solid $color-border;
+  }
+
+  tbody {
+    tr {
+      &:nth-child(even) {
+        background-color: #fff;
+      }
+    }
+  }
+}
+
+.subtitle {
+  font-weight: normal;
+  letter-spacing: 0;
+  color: $header-font-color-secondary;
+}
+
+.break_words {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-all;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+hr {
+  display: block;
+  height: 0;
+  margin: 0.25*$base-scale 0;
+  padding: 0;
+  border: 0;
+  border-top: 1px solid $color-border;
+}
+
+img {
+  vertical-align: middle;
+  height: auto;
+  -ms-interpolation-mode: bicubic;
+}
+
+#map_canvas img, .map_canvas img {
+  max-width: none !important;
+}
+
+img, object, embed, video {
+  max-width: 100%;
+}

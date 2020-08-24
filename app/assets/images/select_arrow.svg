@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>down_arrow</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="down_arrow" fill-rule="nonzero" fill="#aaaaaa">
+            <g id="Group" transform="translate(1.000000, 6.000000)">
+                <path d="M1.74474311,2.500907 L0,0.756144748 L0.378163129,0.378072757 L0.756327024,0 L2.1301291,1.37367801 L3.50393118,2.74735602 L4.87287921,1.37843326 L6.24182724,0.00951050328 L6.61516849,0.38285558 L6.98850897,0.756199891 L5.24384934,2.50093457 C4.28428643,3.46053884 3.49700624,4.24566926 3.4943372,4.24566926 C3.49166893,4.24566926 2.7043512,3.46052659 1.74474311,2.500907 L1.74474311,2.500907 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

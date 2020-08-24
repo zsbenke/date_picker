@@ -1,0 +1,14 @@
+<header class="grid page_title_container">
+  <div class="unit section_title_container">
+    <%= page_title_tag { @post.title } %>
+  </div>
+</header>
+
+<div class="grid">
+  <div class="unit">
+    <%= simple_format @post.body %>
+
+    <%= link_to '&larr; Back to Posts'.html_safe, posts_path, class: 'button secondary' %>
+  </div>
+</div>
+

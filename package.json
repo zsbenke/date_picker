@@ -5,6 +5,9 @@
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "4.3.0",
+    "chrono-node": "^2.1.8",
+    "moment": "^2.27.0",
+    "moment-range": "^4.0.2",
     "stimulus": "^1.1.1",
     "turbolinks": "^5.2.0"
   },

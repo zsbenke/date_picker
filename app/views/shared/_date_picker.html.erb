@@ -1,0 +1,73 @@
+<% date_picker_id = "date_picker_#{SecureRandom.hex(10)}" %>
+
+<div data-controller="date-picker"
+     data-date-picker-time="<%= time %>"
+     id="<%= date_picker_id %>"
+     class="date_picker">
+  <%= form.text_field attribute,
+    options.merge(
+      value: l(form.object.try(attribute), format: :short),
+      data: {
+        target: 'date-picker.dateField',
+        controller: 'popover-toggle',
+        popover_toggle_popover: "##{date_picker_id} .date_picker_popover",
+        action: 'click@document->popover-toggle#dismiss '\
+                'click->popover-toggle#show '\
+                'focus->popover-toggle#show '\
+                'focus->date-picker#start '\
+                'keyup->date-picker#parseDate '\
+                'keydown->date-picker#handleKeydown '\
+                'blur->date-picker#fillInProposedDate'
+      }
+    ) %>
+  <div class="popover date_picker_popover">
+    <header>
+      <h4 data-target="date-picker.currentMonthLabel"></h4>
+      <ul class="plain horizontal button_panel">
+        <li>
+          <%= link_to '&#9664;'.html_safe, '#', class: 'button secondary',
+            data: { action: 'click->date-picker#previousMonth' } %>
+        </li>
+        <li>
+          <%= link_to '&#9679;'.html_safe, '#', class: 'button secondary',
+            data: { action: 'click->date-picker#currentMonth' } %>
+        </li>
+        <li>
+          <%= link_to '&#9654;'.html_safe, '#', class: 'button secondary',
+            data: { action: 'click->date-picker#nextMonth' } %>
+        </li>
+      </ul>
+    </header>
+    <table data-target="date-picker.calendar">
+      <thead>
+        <tr class="weekdays">
+          <% t('date.abbr_day_names').rotate(1).each do |day_name| %>
+            <th><%= day_name %></th>
+          <% end %>
+        </tr>
+      </thead>
+      <tbody>
+        <% 6.times do |row| %>
+          <tr data-date-picker-row="<%= row %>">
+            <% 7.times do |column| %>
+              <td data-date-picker-column="<%= column %>"></td>
+            <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <div class="time_picker" data-target="date-picker.timePicker">
+      <input type="number"
+             data-target="date-picker.hourField"
+             data-action="change->date-picker#adjustTime keydown->date-picker#handleTimePickerKeydown"
+             min="0"
+             max="23">
+      <span class="time_separator">:</span>
+      <input type="number"
+             data-target="date-picker.minuteField"
+             data-action="change->date-picker#adjustTime keydown->date-picker#handleTimePickerKeydown"
+             min="0"
+             max="59">
+    </div>
+  </div>
+</div>

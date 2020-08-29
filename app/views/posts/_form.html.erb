@@ -1,14 +1,13 @@
-<%= form_with(model: post, local: true) do |form| %>
+<%= record_form_for post do |form| %>
   <div class="form_field compact inline">
     <div class="field_label right">
       <%= form.label :published_at %>
     </div>
     <div class="field_input">
       <%= svg_icon('icons.svg', 'calendar', class: 'field_icon') %>
-      <%= form.datetime_select :published_at %>
+      <%= form.date_time_picker_field :published_at %>
     </div>
   </div>
-
 
   <div class="form_field compact inline">
     <div class="field_label right">
